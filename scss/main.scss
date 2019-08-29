@@ -1,0 +1,139 @@
+/*
+Theme Name: Nome do projeto
+Theme URI: www.site.com.br
+Description: Site institucional...
+Version: 1.0
+Tags: site
+Author: Emerson Nunes
+Author URI: www.ifwebs.com
+*/
+// VARIAVEIS -==============///
+
+// CORES
+$Branco: #ffffff;
+$Preto: #000000;
+
+//Fontes
+$Open: 'Open Sans', sans-serif;
+
+// FUNCOES -=================///
+%center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+%right {
+  float:right;
+  margin:0 0 0.5em 0.5em;
+}
+%left{
+  float:left;
+  margin:0 0.5em 0.5em 0;
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin skin($color, $size) {
+  @extend %center;
+  background: $color;
+  height: $size;
+}
+@mixin trans($transition) {
+  transition: ease-in-out $transition;
+  -moz-transition: ease-in-out $transition;
+  -webkit-transition: ease-in-out $transition;
+  -o-transition: ease-in-out $transition;
+}
+@mixin grad($color1, $color2){
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  $color1 0%, $color2 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  $color1 0%,$color2 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  $color1 0%,$color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); /* IE6-9 */
+
+}
+%grayscale{
+  opacity:0.75;
+  -moz-opacity: 0.75;
+  filter: alpha(opacity=75);
+  -webkit-filter: opacity(0.75);
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+      -webkit-filter: grayscale(100%); 
+      image-rendering: auto;
+    }
+    %grayscalehover{
+      opacity:1;
+      -moz-opacity: 1;
+      filter: alpha(opacity=100);
+      -webkit-filter: opacity(1);
+      filter: none; 
+      -webkit-filter: grayscale(0%); 
+      image-rendering: auto;
+      
+    }
+/* --------------------- RESET --------------------- */
+*{
+  margin:0;
+  padding:0;
+  border:0;
+  text-decoration:none;
+  line-height:normal;
+  font-family: $Open;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+  outline: none;
+}
+a{
+  &:hover, &:active, &:focus{
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
+/* --------------------- DEFAULT --------------------- */
+body {
+ width: 100%;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.clear{
+  clear: both;
+}
+img{
+  max-width:100% !important;
+}
+.no-border{
+  border:none !important;
+}
+.hide{
+	display:none !important;
+}
+.alignleft {
+  @extend %left;
+}
+.alignright {
+  @extend %right;
+}
+.aligncenter {
+  @extend %center;
+}
+/* centered columns bootstrap */
+.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right:-4px;
+}
+/* --------------------- HEADER --------------------- */
+/* --------------------- WELCOME --------------------- */
+/* --------------------- PRE-FOOTER --------------------- */
+/* --------------------- FOOTER --------------------- */
+/* --------------------- DEFAULT --------------------- */
+/* --------------------- DEFAULT --------------------- */
